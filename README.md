@@ -1,4 +1,5 @@
-<<<<<<< HEAD
+
+
 # projectindex
 
 ## Project setup
@@ -21,4 +22,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 =======
 # onlineMallManagementSystem
 使用vue全家桶打造的线上商品后台管理系统
->>>>>>> 1cf6473fdc6d3d77b7cede1eb774f4c7f6dd5c16
+
