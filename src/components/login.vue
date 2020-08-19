@@ -26,7 +26,7 @@
             v-model="loginForm.password"
             prefix-icon="iconfont icon-password"
           >
-            <i @click="switchIsShowPassword" slot="suffix" class="iconfont icon-showpassword"></i>
+            <i @click="switchIsShowPassword()" slot="suffix" class="iconfont icon-showpassword"></i>
           </el-input>
         </el-form-item>
         <!-- button area -->
@@ -58,6 +58,7 @@ export default {
           { min: 3, message: "长度不小于3位", trigger: "blur" },
         ],
       },
+      // 输入框文本类型
       inputPasswordtype: "password",
     };
   },
