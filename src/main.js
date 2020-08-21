@@ -7,8 +7,7 @@ import './plugins/element.js'
 /*css */
 import './assets/css/global.css'
 /*iconFont*/
-import  './assets/iconFont/iconfont.css'
-
+import  './assets/iconFont/iconfont.css' 
 Vue.config.productionTip = false
 // axios设置拦截器
 axios.interceptors.request.use(config=>{

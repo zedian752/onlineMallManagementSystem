@@ -21,7 +21,9 @@ const routes = [{
     component: () => import('../components/home.vue'),
     redirect:'/welcome',
     children:[{path:'/welcome',name:'welcome',component:()=>import('../components/welcome.vue')},
-              {path:'/users',name:'users',component:()=>import('../components/user/users.vue')}]
+              {path:'/users',name:'users',component:()=>import('../components/user/users.vue')},
+              {path:'/rights',name:'rights',component:()=>import('../components/authority/authorityList.vue')},
+              {path:'/roles',name:'roles',component:()=>import('../components/authority/rolesList.vue')}]
   },
   {path:'/test',
     component:()=>import('../components/user/dialog/tmptest.vue')

@@ -1,32 +1,30 @@
 <template>
-<div class="main">
-    <el-button type="primary" @click="fatherPropIsVisible=!fatherPropIsVisible">test</el-button>
-     <adduserdialog :propIsVisible.sync="fatherPropIsVisible" ></adduserdialog>
-      <!-- @update:propIsVisible="val=>fatherPropIsVisible=val" -->
+<div class="main" @click="test">
+   
+        <span>{{data}}</span>
+
 </div>
        
-
 </template>
 
-
 <script>
-import adduserdialog from './addUserDialog'
+
 export default {
     data(){return {
-        fatherPropIsVisible:false
+        test:undefined
     }},
-    components:{
-        adduserdialog
+     created(){
+         this.data="100"
     },
     methods:{
-        update(a){
-            this.fatherPropIsVisible=a;
-        }
+
     },
     watch:{
-        fatherPropIsVisible(newValue){
-            console.log("fatherProp"+newValue)
+        test(newV,oldV){
+            console.log(newV);
+            console.log(oldV)
         }
     }
 }
+// a=1 b=2 当a=3 联动 b=3 当 b再次联动 ，但是数值相等
 </script>

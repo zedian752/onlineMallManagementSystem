@@ -38,9 +38,7 @@
                 <i class="el-icon-menu"></i>
                 <span>{{subItem.authName}}</span>
           </el-menu-item>
-       
       </el-submenu>
-
 
     </el-menu>
 
@@ -65,7 +63,6 @@ export default {
     }},
     created(){
         this.getMentuList();
-        console.log(this.$route);
         this.subMenuActivePath=window.sessionStorage.getItem('activePath');
     },
     methods:{
@@ -88,7 +85,7 @@ export default {
         toggleCollapse(){
             this.isCollapse=!this.isCollapse;
         },
-        //保存submenu的default-active的值
+        //保存submenu的default-active的值,用于持久化页面的active标签
         saveNavState(activePath){
             window.sessionStorage.setItem('activePath',activePath);
             this.subMenuActivePath=activePath
