@@ -57,7 +57,7 @@ export default {
       if (res.meta.status !== 200)
         return this.$message.error("获取用户权限失败");
       this.authorityList = res.data;
-      console.log(res);
+
     },
   },
 };
