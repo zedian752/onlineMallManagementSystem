@@ -29,13 +29,10 @@ export default {
     };
   },
   props: { propisEditCategoryDialogVisible: Boolean ,editCategoryId:Number},
-
   methods: {
     //修改单个分类名字信息
     async editCategoryInfo() {
-
     const {data:res} = await this.$axios.put("categories/" + this.editCategoryId,{cat_name:this.editCategoryForm.cat_name})
-
             if (res.meta.status !== 200) {
               return this.$message.error("修改分类失败");
             }
@@ -51,7 +48,6 @@ export default {
       propisEditCategoryDialogVisible(newValue){
           this.isEditCategoryDialogVisible=newValue;
       },
-
   },
 };
 </script>

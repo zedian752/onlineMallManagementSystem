@@ -49,14 +49,13 @@ export default {
           ]}
     },
   methods: {
-      handleChange(val){console.log(val)},
     // 当对话框关闭的时候,清空Categoryform内的全部内容
     resetAddCategoryForm() {
       this.$refs.addCategoryFormRef.resetFields();
     },
     // 通过点击按钮增加角色
      addCategory() {
-      console.log(this.addCategoryForm)
+     
       this.$refs.addCategoryFormRef.validate(async (valid) => {
         if (!valid) {return;}
 
@@ -81,17 +80,18 @@ export default {
     },
     //父级分类选择器改变时触发
     parentCateChanged(){
+     
         //如果有选中分类则更改addcategoryform里面的cat_pid和cat_level
-        if(this.selectedKeys.length>0){
+        // if(this.selectedKeys.length>0){
             //父级分类的id
             this.addCategoryForm.cat_pid=this.selectedKeys.slice(-1)[0];
-            //为当前分类的等级赋值
+            //为当前分类的等级赋值,后代接口中0代表1级,1代表2级......
             this.addCategoryForm.cat_level=this.selectedKeys.length;
-            console.log(this.addCategoryForm)
-            }
-        else{//重置分类id和分类等级
-            this.addCategoryForm.cat_pid=this.addCategoryForm.cat_level=0}
-        console.log(this.selectedKeys)
+        //     }
+        // else{//重置分类id和分类等级
+       
+        //     this.addCategoryForm.cat_pid=this.addCategoryForm.cat_level=0}
+        
     },
     // 关闭对话框时清空对话框内容
     addCateDialogClose(){
@@ -100,7 +100,7 @@ export default {
         this.addCategoryForm.cat_level =this.addCategoryForm.cat_pid =0;
     }
   },
-  created(){ console.log("addcatedialog created");this.getParentCateList();},
+  created(){ this.getParentCateList();},
 
   watch: {
     isAddCategoryDialogVisible(newValue) {

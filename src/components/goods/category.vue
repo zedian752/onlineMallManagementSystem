@@ -47,14 +47,14 @@
               type="primary"
               icon="el-icon-edit"
               @click="editCategoryById(scope.row.cat_id)"
-            ></el-button>
+            >编辑分类</el-button>
             <!-- 删除分类 -->
             <el-button
               size="small"
               type="danger"
               icon="el-icon-delete"
               @click="removeUserById(scope.row.cat_id,scope.row.cat_name)"
-            ></el-button>
+            >删除分类</el-button>
           </template>
         </el-table-column>
       </el-table>

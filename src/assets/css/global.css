@@ -26,3 +26,8 @@ html,body,#app{
 .el-cascader-panel{
     height: 200px;
 }
+
+
+.el-tag{
+    margin: 0 5px;
+}
