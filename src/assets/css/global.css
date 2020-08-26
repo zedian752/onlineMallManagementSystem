@@ -31,3 +31,18 @@ html,body,#app{
 .el-tag{
     margin: 0 5px;
 }
+
+/* steps */
+.el-steps{
+    margin: 15px 0;
+}
+
+/* 级联选择器 */
+.el-cascader--medium{
+    width: 300px;
+}
+
+/* 富文本编辑器 */
+.ql-editor{
+    min-height: 300px;
+}

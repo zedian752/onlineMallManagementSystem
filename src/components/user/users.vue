@@ -85,7 +85,7 @@
       @getUserList="getUserList()"
       :userId="editUserId"
     ></editUserInfoDialog>
-    <!-- 修改用户角色对话框 -->
+    <!-- 分配用户角色对话框 -->
     <assignRoleDialog :propisAssignRoleDialogVisible.sync="isAssignRoleDialogVisible" @getUserList="getUserList()" :userInfo="assignRoleInfo"></assignRoleDialog>
   </div>
 </template>
@@ -96,7 +96,7 @@
 import addUserDialog from "./dialog/addUserDialog";
 // 抽离后的修改用户对话框子组件
 import editUserInfoDialog from "./dialog/editUserInfoDialog";
-// 抽离后的修改用户角色对话框子组件
+// 抽离后的分配用户角色对话框子组件
 import assignRoleDialog from "./dialog/assignRoleDialog";
 export default {
   components: {
