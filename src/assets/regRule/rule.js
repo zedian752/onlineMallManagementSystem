@@ -40,6 +40,10 @@ export default {
     goods_weight:[{required:true,message:"请输入商品重量",trigger:'blur'}],
     // 商品分类
     goods_cat:[{required:true,message:"请选择商品分类",trigger:'blur'}],
+    // 省市区县
+    address_province:[{required:true,message:"请选择省市区县",trigger:'blur'}],
+    // 详细地址
+    address_detail:[{required:true,message:"请输入详细地址",trigger:'blur'}],
 
 
 }

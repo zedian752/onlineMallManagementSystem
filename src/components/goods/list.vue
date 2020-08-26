@@ -69,10 +69,8 @@
 
 
 <script>
-
 export default {
   components: {
-
     
   },
   data() {
@@ -94,7 +92,6 @@ export default {
   created() {
     // 刷新商品列表
     this.getGoodsList();
-
   },
   methods: {
     //获取商品列表
