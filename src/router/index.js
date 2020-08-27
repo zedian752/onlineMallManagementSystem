@@ -28,7 +28,8 @@ const routes = [{
               {path:'/params',name:'params',component:()=>import('../components/goods/params.vue')},
               {path:'/goods',name:'goods',component:()=>import('../components/goods/list.vue')},
               {path:'/goods/add',name:'goods-add',component:()=>import('../components/goods/addGoods.vue')},
-              {path:'/orders',name:'orders',component:()=>import('../components/order/order.vue')}]
+              {path:'/orders',name:'orders',component:()=>import('../components/order/order.vue')},
+              {path:'/reports',name:'orders',component:()=>import('../components/report/report.vue')}]
   },
   {path:'/test',
     component:()=>import('../components/user/dialog/tmptest.vue')
