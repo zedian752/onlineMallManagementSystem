@@ -99,15 +99,12 @@ export default {
   methods: {
     //获取商品列表
     async getOrdersList() {
-        var tmp;
-      const { data: res } = tmp=await this.$axios.get("orders", {
+        
+      const { data: res } = await this.$axios.get("orders", {
         params: this.queryInfo,
       });
-      console.log(tmp)
-
       //商品信息
       this.ordersInfo.orderslist = res.data.goods;
-      console.log(this.ordersInfo.orderslist);
       //商品总数
       this.ordersInfo.total = res.data.total;
       if (res.meta.status !== 200) {
@@ -131,7 +128,6 @@ export default {
     },
     // 显示物流信息对话框
     showProgressInfoDialog(orderId){
-        console.log(orderId)
         this.orderId = orderId;
         this.isShowProgressDialogVisible = true;
     }

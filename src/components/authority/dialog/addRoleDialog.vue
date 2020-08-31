@@ -41,14 +41,12 @@ export default {
     },
     // 通过点击按钮增加角色
     addRole() {
-      console.log(this.addRoleForm)
       this.$refs.addRoleFormRef.validate((valid) => {
         if (!valid) {
           return;
         }
         this.$axios.post("roles", this.addRoleForm).then((res) => {
           res = res.data;
-          console.log(res);
           if (res.meta.status !== 201) {
             if (res.meta.status === 400) {
               return this.$message.error("角色名已存在");

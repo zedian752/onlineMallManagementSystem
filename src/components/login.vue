@@ -41,6 +41,7 @@
 
 
 <script>
+
 export default {
   name: "login",
   data() {
@@ -79,7 +80,6 @@ export default {
             message: "登录成功！",
             type: "success",
           });
-        //console.log(resData) 
         window.sessionStorage.setItem('token',resData.data.token)//token保存到sessionStorage
         this.$router.push('/home')
         } else {

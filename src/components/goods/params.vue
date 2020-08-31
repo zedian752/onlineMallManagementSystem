@@ -295,7 +295,6 @@ export default {
     },
     //增加新attr_values
     async editNewAttrValues(col_data) {
-      console.log(col_data);
       //在后端增加数据
       const { data: res } = await this.$axios.put(
         `categories/${col_data.cat_id}/attributes/${col_data.attr_id}`,
@@ -313,7 +312,6 @@ export default {
     },
     //添加新标签
     async addNewTag(col_data) {
-      console.log(col_data);
       //如果文本框没有内容则清空输入框内容
       if (col_data.inputValue.trim().length === 0) {
         col_data.inputValue = "";

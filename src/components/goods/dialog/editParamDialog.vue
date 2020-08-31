@@ -35,7 +35,6 @@ export default {
   methods: {
     //   修改参数
     async EditParam() {
-      console.log(this.editParamForm);
       const {
         data: res,
       } = await this.$axios.put(
@@ -50,7 +49,6 @@ export default {
       this.isEditParamDialogVisible = false;
     },
     onDialogClose() {
-      console.log("close");
       this.new_attr_name = "";
     },
   },

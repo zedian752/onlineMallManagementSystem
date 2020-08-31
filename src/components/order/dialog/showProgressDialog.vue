@@ -45,10 +45,8 @@ export default {
     //   获取物流信息
     async getProgressInfo(){
         const {data:res}  =await this.$axios.get(`/kuaidi/1106975712662`)
-        console.log(res)
         if(res.meta.status!==200){return this.$message.error("获取物流信息失败")}
         this.progressInfo = res.data; 
-        console.log(this.progressInfo)
     },
 
     onDialogClose() {
@@ -65,7 +63,6 @@ export default {
       this.isShowProgressDialogVisible = newValue;
     },
     orderId(){
-        console.log("orderId change")
         this.getProgressInfo()
     }
   },

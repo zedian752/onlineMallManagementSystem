@@ -4,6 +4,7 @@ import router from './router'
 import axios from 'axios'
 /*plugin*/
 import './plugins/element.js'
+// import 'element-ui'
 /*css */
 import './assets/css/global.css'
 /*iconFont*/
@@ -33,6 +34,8 @@ axios.interceptors.response.use(config=>{
 // axios设置根地址
 axios.defaults.baseURL='http://127.0.0.1:8888/api/private/v1/'
 Vue.prototype.$axios=axios;
+// 子组件间传值
+Vue.prototype.$bus =new Vue();
 // 全局过滤器//用于商品列表的时间格式处理
 Vue.filter('dateFormat',function(originVal){
   const date = new Date(originVal);

@@ -84,7 +84,6 @@ export default {
       this.$emit("update:propisEditUserDialogVisible", newValue);
     },
     propisEditUserDialogVisible(newValue) {
-      console.log(newValue);
       this.isEditUserDialogVisible = newValue;
     },
     // 监控父传值用以请求获取当前待修改用户的信息

@@ -64,7 +64,6 @@ export default {
         }
         this.$axios.post("users", this.addUserForm).then((res) => {
           res = res.data;
-          console.log(res);
           if (res.meta.status !== 201) {
             if (res.meta.status === 400) {
               return this.$message.error("用户名已存在");

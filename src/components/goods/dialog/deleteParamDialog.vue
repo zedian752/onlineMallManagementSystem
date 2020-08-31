@@ -25,7 +25,6 @@ export default {
   methods: {
     //   删除参数
     async DeleteParam() {
-      console.log(this.deleteParamForm)
         const {data:res} = await this.$axios.delete(`categories/${this.deleteParamForm.cat_id}/attributes/${this.deleteParamForm.attr_id}`)
        if(res.meta.status!==200) {return this.$message.error("删除失败")}
        this.$message.success("删除成功");

@@ -38,7 +38,6 @@ export default {
   methods: {
     //修改单个角色信息
     editRoleInfo() {
-        console.log(this.editRoleForm);
       this.$refs.editRoleInfoForm.validate((valid) => {
         if (!valid) {
           return;
@@ -47,7 +46,6 @@ export default {
           .put("roles/" + this.editRoleForm.roleId, this.editRoleForm)
           .then((res) => {
             res = res.data;
-            console.log(res);
             if (res.meta.status !== 200) {
               return this.$message.error("修改角色失败");
             }

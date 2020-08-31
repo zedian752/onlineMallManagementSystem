@@ -1,19 +1,19 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import axios from 'axios'
+// import axios from 'axios'
 /*plugin*/
-import './plugins/element.js'
+// import './plugins/element.js'
 /*css */
 import './assets/css/global.css'
 /*iconFont*/
 import  './assets/iconFont/iconfont.css' 
 // 富文本编辑器
-import VueQuillEditor from 'vue-quill-editor'
-import 'quill/dist/quill.core.css' // import styles
-import 'quill/dist/quill.snow.css' // for snow theme
-import 'quill/dist/quill.bubble.css' // for bubble theme
-Vue.use(VueQuillEditor, /* { default global options } */)
+// import VueQuillEditor from 'vue-quill-editor'
+// import 'quill/dist/quill.core.css' // import styles
+// import 'quill/dist/quill.snow.css' // for snow theme
+// import 'quill/dist/quill.bubble.css' // for bubble theme
+Vue.use(VueQuillEditor)
 // 网页加载进度条
 import nProgress from 'nprogress/nprogress'
 import 'nprogress/nprogress.css'
@@ -25,13 +25,15 @@ axios.interceptors.request.use(config=>{
   config.headers.Authorization=window.sessionStorage.getItem("token");
   return config;
 })
+// axios设置根地址
+axios.defaults.baseURL='http://127.0.0.1:8888/api/private/v1/'
+
 // axios设置response拦截器
 axios.interceptors.response.use(config=>{
   nProgress.done();
   return config;
 })
-// axios设置根地址
-axios.defaults.baseURL='http://127.0.0.1:8888/api/private/v1/'
+debugger
 Vue.prototype.$axios=axios;
 // 全局过滤器//用于商品列表的时间格式处理
 Vue.filter('dateFormat',function(originVal){

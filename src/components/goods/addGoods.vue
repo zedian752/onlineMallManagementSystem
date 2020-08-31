@@ -176,7 +176,6 @@ export default {
     },
     //级联选择器发生变化
     onCascaderChange() {
-      console.log(this.addForm.goods_cat);
       if (this.addForm.goods_cat.length !== 3) {
         this.$message.error("请选择三级分类");
         this.addForm.goods_cat = [];
@@ -211,7 +210,6 @@ export default {
       //onlyDate的attr_vals不需要进行数组化
       if (sel === "only") {
         this.onlyData = res.data;
-        console.log(this.onlyData);
         return;
       }
       res.data.forEach((item) => {
@@ -233,13 +231,11 @@ export default {
     let index = this.addForm.pics.findIndex(item=>{return item['pic']===filePath})
     //移除数据
     this.addForm.pics.splice(index,1);
-      console.log(this.addForm.pics)
     },
     //当图片上传成功
     onPicUploadSuccess(response){
       const picInfo = {"pic":response.data.tmp_path}
       this.addForm.pics.push(picInfo)
-        console.log(response)
     },
     // 添加商品
     addGoods(){
@@ -259,7 +255,6 @@ export default {
                 // 使用深拷贝复制addform以处理goods_cat参数,避免goods_cat转字符串之后影响到级联选择器
             let objCopy=JSON.parse(JSON.stringify(this.addForm));
             objCopy.goods_cat=objCopy.goods_cat.join(',')
-            console.log(objCopy)
             // 开始请求
            const {data:res} = await  this.$axios.post("goods",objCopy)
            if(res.meta.status!==201) {return this.$message.error("添加商品失败,请确保全部信息填写完整")}
